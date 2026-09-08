@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Prompt Generator</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-purple-600 to-indigo-700 min-h-screen text-white">
+
+<!-- Hero -->
+<div class="text-center py-10">
+  <h1 class="text-4xl font-bold">Generate Perfect Website Prompts in Seconds</h1>
+  <p class="opacity-80 mt-2">Create high-converting prompts for AI website builders</p>
+</div>
+
+<!-- Main Container -->
+<div class="max-w-5xl mx-auto p-6 grid md:grid-cols-2 gap-6">
+
+  <!-- Input Section -->
+  <div class="glass p-6 rounded-2xl shadow-xl">
+    
+    <h2 class="text-xl font-semibold mb-4">Customize Your Prompt</h2>
+
+    <input id="type" placeholder="Website Type (eCommerce)" class="w-full p-2 mb-3 rounded text-black">
+    <input id="industry" placeholder="Industry (Tea Company)" class="w-full p-2 mb-3 rounded text-black">
+    <input id="audience" placeholder="Target Audience" class="w-full p-2 mb-3 rounded text-black">
+
+    <select id="style" class="w-full p-2 mb-3 rounded text-black">
+      <option>Modern</option>
+      <option>Minimal</option>
+      <option>Dark</option>
+      <option>Glassmorphism</option>
+      <option>Futuristic</option>
+    </select>
+
+    <input id="color" placeholder="Color Theme" class="w-full p-2 mb-3 rounded text-black">
+    <input id="features" placeholder="Features (Login, Payment...)" class="w-full p-2 mb-3 rounded text-black">
+
+    <select id="platform" class="w-full p-2 mb-4 rounded text-black">
+      <option>HTML/CSS</option>
+      <option>React</option>
+      <option>WordPress</option>
+    </select>
+
+    <button onclick="generatePrompt()" class="w-full bg-indigo-500 hover:bg-indigo-600 py-2 rounded-xl">Generate Prompt</button>
+    <button onclick="randomPrompt()" class="w-full bg-pink-500 hover:bg-pink-600 py-2 rounded-xl mt-2">Random Prompt</button>
+  </div>
+
+  <!-- Output Section -->
+  <div class="glass p-6 rounded-2xl shadow-xl">
+    <h2 class="text-xl font-semibold mb-4">Generated Prompt</h2>
+    <textarea id="output" rows="12" class="w-full p-3 rounded text-black"></textarea>
+
+    <div class="flex gap-2 mt-3">
+      <button onclick="copyPrompt()" class="flex-1 bg-green-500 py-2 rounded">Copy</button>
+      <button onclick="downloadTXT()" class="flex-1 bg-blue-500 py-2 rounded">Download</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
