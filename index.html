@@ -1,69 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Website Prompt Generator</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PromptForge — AI Website Prompt Generator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-gradient-to-br from-purple-600 to-indigo-700 min-h-screen text-white">
+<body>
 
-<!-- Hero -->
-<div class="text-center py-10">
-  <h1 class="text-4xl font-bold">Generate Perfect Website Prompts in Seconds</h1>
-  <p class="opacity-80 mt-2">Create high-converting prompts for AI website builders</p>
-</div>
+  <!-- Background -->
+  <div class="background-grid"></div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
 
-<!-- Main Container -->
-<div class="max-w-5xl mx-auto p-6 grid md:grid-cols-2 gap-6">
-
-  <!-- Input Section -->
-  <div class="glass p-6 rounded-2xl shadow-xl">
-    
-    <h2 class="text-xl font-semibold mb-4">Customize Your Prompt</h2>
-
-    <input id="type" placeholder="Website Type (eCommerce)" class="w-full p-2 mb-3 rounded text-black">
-    <input id="industry" placeholder="Industry (Tea Company)" class="w-full p-2 mb-3 rounded text-black">
-    <input id="audience" placeholder="Target Audience" class="w-full p-2 mb-3 rounded text-black">
-
-    <select id="style" class="w-full p-2 mb-3 rounded text-black">
-      <option>Modern</option>
-      <option>Minimal</option>
-      <option>Dark</option>
-      <option>Glassmorphism</option>
-      <option>Futuristic</option>
-    </select>
-
-    <input id="color" placeholder="Color Theme" class="w-full p-2 mb-3 rounded text-black">
-    <input id="features" placeholder="Features (Login, Payment...)" class="w-full p-2 mb-3 rounded text-black">
-
-    <select id="platform" class="w-full p-2 mb-4 rounded text-black">
-      <option>HTML/CSS</option>
-      <option>React</option>
-      <option>WordPress</option>
-    </select>
-
-    <button onclick="generatePrompt()" class="w-full bg-indigo-500 hover:bg-indigo-600 py-2 rounded-xl">Generate Prompt</button>
-    <button onclick="randomPrompt()" class="w-full bg-pink-500 hover:bg-pink-600 py-2 rounded-xl mt-2">Random Prompt</button>
-  </div>
-
-  <!-- Output Section -->
-  <div class="glass p-6 rounded-2xl shadow-xl">
-    <h2 class="text-xl font-semibold mb-4">Generated Prompt</h2>
-    <textarea id="output" rows="12" class="w-full p-3 rounded text-black"></textarea>
-
-    <div class="flex gap-2 mt-3">
-      <button onclick="copyPrompt()" class="flex-1 bg-green-500 py-2 rounded">Copy</button>
-      <button onclick="downloadTXT()" class="flex-1 bg-blue-500 py-2 rounded">Download</button>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="brand">
+      <div class="brand-mark">P</div>
+      <span>PromptForge</span>
     </div>
+
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      AI Prompt Studio
+    </div>
+  </header>
+
+
+  <!-- Main -->
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="eyebrow">
+        <span>✦</span>
+        WEBSITE PROMPT GENERATOR
+      </div>
+
+      <h1>
+        Build better websites with
+        <span>better prompts.</span>
+      </h1>
+
+      <p>
+        Create detailed, production-ready prompts for AI website builders
+        in seconds.
+      </p>
+    </section>
+
+
+    <!-- Workspace -->
+    <section class="workspace">
+
+      <!-- Builder -->
+      <div class="panel builder-panel">
+
+        <div class="panel-header">
+          <div>
+            <span class="step-label">01 — CONFIGURE</span>
+            <h2>Website Blueprint</h2>
+          </div>
+
+          <span class="required">All fields optional</span>
+        </div>
+
+
+        <div class="form-grid">
+
+          <div class="field">
+            <label for="type">Website Type</label>
+            <input
+              id="type"
+              type="text"
+              placeholder="e.g. SaaS Landing Page"
+            >
+          </div>
+
+          <div class="field">
+            <label for="industry">Industry</label>
+            <input
+              id="industry"
+              type="text"
+              placeholder="e.g. FinTech"
+            >
+          </div>
+
+          <div class="field">
+            <label for="audience">Target Audience</label>
+            <input
+              id="audience"
+              type="text"
+              placeholder="e.g. Startup founders"
+            >
+          </div>
+
+          <div class="field">
+            <label for="color">Color Direction</label>
+            <input
+              id="color"
+              type="text"
+              placeholder="e.g. Navy & Electric Blue"
+            >
+          </div>
+
+          <div class="field">
+            <label for="style">Visual Style</label>
+
+            <div class="select-wrapper">
+              <select id="style">
+                <option value="Modern">Modern</option>
+                <option value="Minimal">Minimal</option>
+                <option value="Dark">Dark & Elegant</option>
+                <option value="Glassmorphism">Glassmorphism</option>
+                <option value="Futuristic">Futuristic</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="platform">Technology</label>
+
+            <div class="select-wrapper">
+              <select id="platform">
+                <option value="HTML, CSS and JavaScript">
+                  HTML / CSS / JS
+                </option>
+
+                <option value="React and modern CSS">
+                  React
+                </option>
+
+                <option value="WordPress">
+                  WordPress
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field full-width">
+            <label for="features">Key Features</label>
+
+            <input
+              id="features"
+              type="text"
+              placeholder="e.g. Authentication, pricing, dashboard, payments"
+            >
+          </div>
+
+        </div>
+
+
+        <!-- Actions -->
+        <div class="actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="generatePrompt()"
+          >
+            <span>Generate Prompt</span>
+            <span class="arrow">→</span>
+          </button>
+
+          <button
+            class="btn btn-secondary"
+            onclick="randomPrompt()"
+          >
+            <span>✦</span>
+            Randomize
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Output -->
+      <div class="panel output-panel">
+
+        <div class="panel-header">
+
+          <div>
+            <span class="step-label">02 — OUTPUT</span>
+            <h2>Your Prompt</h2>
+          </div>
+
+          <div class="output-actions">
+
+            <button
+              class="icon-button"
+              onclick="copyPrompt()"
+              title="Copy prompt"
+            >
+              ⧉
+            </button>
+
+            <button
+              class="icon-button"
+              onclick="downloadTXT()"
+              title="Download prompt"
+            >
+              ↓
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="output-wrapper">
+
+          <div id="emptyState" class="empty-state">
+
+            <div class="empty-icon">
+              ✦
+            </div>
+
+            <h3>Your prompt will appear here</h3>
+
+            <p>
+              Configure your website requirements and hit
+              <strong>Generate Prompt</strong>.
+            </p>
+
+          </div>
+
+          <textarea
+            id="output"
+            spellcheck="false"
+            aria-label="Generated website prompt"
+          ></textarea>
+
+        </div>
+
+
+        <div class="output-footer">
+          <span id="characterCount">0 characters</span>
+
+          <span class="ready-status">
+            <span class="status-dot"></span>
+            Ready
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Feature strip -->
+    <section class="feature-strip">
+
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <div>
+          <strong>Fast generation</strong>
+          <small>Build prompts in seconds</small>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">◈</span>
+        <div>
+          <strong>Structured output</strong>
+          <small>Ready for AI builders</small>
+        </div>
+      </div>
+
+      <div class="feature">
+        <span class="feature-icon">↗</span>
+        <div>
+          <strong>Production focused</strong>
+          <small>UX, performance & conversion</small>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Toast -->
+  <div id="toast" class="toast">
+    <span>✓</span>
+    <span id="toastMessage">Copied to clipboard</span>
   </div>
 
-</div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
